@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:chatapp/pages/chat/chat.dart';
+//import 'package:chatapp/pages/chat/chat.dart';
 
 class Add extends StatelessWidget {
   static const String routeName = "/addfriend";
@@ -12,7 +12,7 @@ class Add extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey[200],
-       
+      
         elevation: .0,
         title: Text("添加好友"),
       ),

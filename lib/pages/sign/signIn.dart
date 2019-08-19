@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter/rendering.dart';
+import 'package:chatapp/pages/sign/signUp.dart';
 
 void main() {
   debugPaintSizeEnabled = false;
@@ -100,8 +101,7 @@ class _LoginHomePageState extends State<LoginHomePage> {
 
             Row(
                 mainAxisSize: MainAxisSize.min,
-                children: [
-                 
+                children: [                 
                   Padding(
                    padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
                   ),
@@ -121,7 +121,7 @@ class _LoginHomePageState extends State<LoginHomePage> {
                   ),
                   new Expanded(
                       child: new TextFormField(
-                      autofocus: _nameAutoFocus,
+                     // autofocus: _nameAutoFocus,
                       controller: _userNameTextController,
                       decoration: InputDecoration(
                       hintText: '手机号/相遇号(6-16位字母/数字)',
@@ -140,10 +140,11 @@ class _LoginHomePageState extends State<LoginHomePage> {
                         ),
                       ),
                      
-                      validator: (value) {
+                      validator: (String value) {
                         if (value.trim().isEmpty) {
                           return '请输入帐号';
                         }
+                        return "";
                       },
                       
                     ),
@@ -201,10 +202,11 @@ class _LoginHomePageState extends State<LoginHomePage> {
                         ),
 
                       obscureText: !pwdShow,
-                      validator: (value) {
+                      validator:  ( String value) {
                         if (value.trim().isEmpty) {
                           return '请输入密码(6-16位)';
                         }
+                         return "";
                       },
                      
                       
@@ -233,9 +235,9 @@ class _LoginHomePageState extends State<LoginHomePage> {
                     onPressed: () {
                        //导航到新路由   
                       Navigator.push( context,
-                      MaterialPageRoute(builder: (context) {
-                          //return SignUp();
-                      })
+                      MaterialPageRoute (builder:  ( context) {
+                          return SignUp();
+                      }) 
                       );
                     },
                     ),

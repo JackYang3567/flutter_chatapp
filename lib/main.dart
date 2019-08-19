@@ -6,6 +6,8 @@ import 'package:chatapp/pages/maillist/mailList.dart';
 import 'package:chatapp/pages/games/games.dart';
 import 'package:chatapp/pages/my/my.dart';
 
+import 'package:chatapp/pages/sign/signIn.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '相遇',
-      home: HomePage(),
+      home: SignIn(),//HomePage(),
       theme: ThemeData(primaryColor: Colors.orange),
     );
   }
@@ -21,7 +23,8 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatefulWidget { 
   @override
-  _HomePage createState() => _HomePage();
+   _HomePage createState() => _HomePage();
+   
 }
 
 
@@ -66,10 +69,10 @@ class _HomePage extends State<HomePage> {
         onTap: _onItemTapped,
       ),
     
-       body:  IndexedStack(
+       body: IndexedStack(
         index: _selectedIndex,
         children: _children,
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
