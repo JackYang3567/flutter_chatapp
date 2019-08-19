@@ -32,22 +32,22 @@ class _HomePage extends State<HomePage> {
 
   final List<BottomNavigationBarItem> _list = <BottomNavigationBarItem>[
     BottomNavigationBarItem(
-        icon: Icon(Icons.home),
+        icon: Icon(IconData(0xe603, fontFamily: 'Iconfont')),
         title: Text('会话'),
         //backgroundColor: Colors.orange
         ),
     BottomNavigationBarItem(
-        icon: Icon(Icons.book),
+        icon: Icon( IconData( 0xe620, fontFamily: 'Iconfont')),
         title: Text('通讯录'),
         //backgroundColor: Colors.orange
         ),
     BottomNavigationBarItem(
-        icon: Icon(Icons.music_video),
+        icon: Icon(IconData( 0xe70a, fontFamily: 'Iconfont')),
         title: Text('游戏'),
         //backgroundColor: Colors.orange
         ),
     BottomNavigationBarItem(
-        icon: Icon(Icons.movie),
+        icon: Icon(IconData(0xe61c,fontFamily: 'Iconfont')),
         title: Text('我'),
         //backgroundColor: Colors.orange
         ),

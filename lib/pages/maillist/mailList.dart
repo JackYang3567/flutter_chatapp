@@ -13,6 +13,7 @@ class MailList extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey[200],
+        elevation: .0,
         title: Text("通讯录"),
       ),
       body: Center(
