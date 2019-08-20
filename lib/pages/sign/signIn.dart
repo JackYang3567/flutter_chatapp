@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
 
+//import 'package:chatapp/services/authentication.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter/rendering.dart';
+
 import 'package:chatapp/pages/sign/signUp.dart';
+//import 'package:chatapp/services/authentication.dart';
 
 void main() {
-  debugPaintSizeEnabled = false;
+  debugPaintSizeEnabled = true;
   runApp(new SignIn());
 }
 
 class SignIn extends StatelessWidget {
   // This widget is the root of your application.
+   SignIn({//this.auth, 
+   this.onSignedIn});
+
+ // final BaseAuth auth;
+  final VoidCallback onSignedIn;
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -29,10 +38,8 @@ class SignIn extends StatelessWidget {
 
 class LoginHomePage extends StatefulWidget {
   @override
-  _LoginHomePageState createState() {
+  _LoginHomePageState createState()=> _LoginHomePageState();
    
-    return new _LoginHomePageState();
-  }
 }
 
 class _LoginHomePageState extends State<LoginHomePage> {
@@ -52,15 +59,17 @@ class _LoginHomePageState extends State<LoginHomePage> {
   }
 
   void _toggleSubmit() {
+  
     if (_formKey.currentState.validate()) {
       setState(() {
         _showLoading = true;
       });
-
+     
       _loginRequest().then((onValue) {
         setState(() {
           _showLoading = false;
         });
+       
         showDialog(
             context: context,
             builder: (context) {
@@ -125,9 +134,7 @@ class _LoginHomePageState extends State<LoginHomePage> {
                       controller: _userNameTextController,
                       decoration: InputDecoration(
                       hintText: '手机号/相遇号(6-16位字母/数字)',
-                        
-                      suffixIcon: IconButton(
-                         
+                      suffixIcon: IconButton(                         
                           icon: Icon(                           
                              Icons.clear ,
                             ),
@@ -235,9 +242,9 @@ class _LoginHomePageState extends State<LoginHomePage> {
                     onPressed: () {
                        //导航到新路由   
                       Navigator.push( context,
-                      MaterialPageRoute (builder:  ( context) {
-                          return SignUp();
-                      }) 
+                          MaterialPageRoute (builder:  ( context) {
+                             return SignUp();
+                          }) 
                       );
                     },
                     ),
@@ -252,8 +259,7 @@ class _LoginHomePageState extends State<LoginHomePage> {
               
               child: RaisedButton(
                 shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
-                onPressed: _toggleSubmit,
-                
+                onPressed: _toggleSubmit,                
                 child: Text(
                   '登录',
                   style: TextStyle(color: Colors.white, fontSize: 20.0),
@@ -279,6 +285,7 @@ class _LoginHomePageState extends State<LoginHomePage> {
           ),
         ));
     childrens.add(_mainConatiner);
+
     if (_showLoading) {
       childrens.add(_loadingContainer);
     }

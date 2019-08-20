@@ -6,7 +6,7 @@ class Add extends StatelessWidget {
 
   final data;
   Add({this.data});
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:dio/dio.dart';
-import 'package:english_words/english_words.dart';
 
-import 'package:chatapp/pages/maillist/mailList.dart';
+
+import 'package:flutter/material.dart';
+//import 'package:dio/dio.dart';
+//import 'package:english_words/english_words.dart';
+
+//import 'package:chatapp/pages/maillist/mailList.dart';
 import 'package:chatapp/pages/friend/add.dart';
 import 'package:chatapp/pages/friend/groupchat.dart';
 import 'package:chatapp/pages/chat/chatList.dart';
@@ -18,7 +20,7 @@ class Chat extends StatelessWidget {
   
   
 
-  SelectView(IconData icon, String text, String id) {
+  selectView(IconData icon, String text, String id) {
     return new PopupMenuItem<String>(
         value: id,
         child: new Row(
@@ -34,9 +36,11 @@ class Chat extends StatelessWidget {
          
  }
 
+
   @override
   Widget build(BuildContext context) {
-     print("====");
+    
+     print("==dd==");
    
     return Scaffold(
       
@@ -77,11 +81,11 @@ class Chat extends StatelessWidget {
             ),
            
             itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                this.SelectView(IconData(0xe603,fontFamily: 'Iconfont'), '发起群聊', 'A'),
+                this.selectView(IconData(0xe603,fontFamily: 'Iconfont'), '发起群聊', 'A'),
                 new PopupMenuDivider(height: 1.0),
-                this.SelectView(IconData(0xe505,fontFamily: 'Iconfont'), '添加好友', 'B'),
+                this.selectView(IconData(0xe505,fontFamily: 'Iconfont'), '添加好友', 'B'),
                  new PopupMenuDivider(height: 1.0),
-                this.SelectView(IconData(0xe7b7,fontFamily: 'Iconfont'), '扫一扫　', 'C'),
+                this.selectView(IconData(0xe7b7,fontFamily: 'Iconfont'), '扫一扫　', 'C'),
                
                
             ],
